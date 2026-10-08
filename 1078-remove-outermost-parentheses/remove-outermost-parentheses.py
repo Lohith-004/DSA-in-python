@@ -10,9 +10,8 @@ class Solution:
                 depth += 1
             else:
                 depth -= 1
-                
                 if depth > 0:
                     result.append(ch)
-
+            
         return ''.join(result)
-        
+            
