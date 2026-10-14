@@ -3,18 +3,18 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        count = {}
+        freq = {}
 
         for ch in s:
-            count[ch] = count.get(ch,0)+1
+            freq[ch] = freq.get(ch, 0) + 1
 
         for ch in t:
-            if ch not in count:
+            if ch not in freq:
                 return False
-            
-            count[ch] -= 1
 
-            if count[ch] < 0:
+            freq[ch] -= 1
+
+            if freq[ch] < 0:
                 return False
-        
+
         return True
