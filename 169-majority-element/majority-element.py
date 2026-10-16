@@ -1,21 +1,9 @@
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        n = len(nums)
-        cnt = 0
-        ele = 0
+    def majorityElement(self, nums: list[int]) -> int:
+        freq = {}
 
-        for i in range(0,n):
-            if cnt == 0:
-                cnt = 1
-                ele = nums[i]
-            elif ele == nums[i]:
-                cnt += 1
-            else:
-                cnt -= 1
-    
-        cnt1 = nums.count(ele)
+        for num in nums:
+            freq[num] = freq.get(num,0) + 1
 
-        if cnt1 > n//2:
-            return ele
-
-        return -1
+            if freq[num] > len(nums) // 2:
+                return num
